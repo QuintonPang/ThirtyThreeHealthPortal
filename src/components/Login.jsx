@@ -45,19 +45,19 @@ const Login = () => {
         // console.log(response);
         localStorage.setItem('user',JSON.stringify(result.user));
         
-        // sanity doc
-        const doc = {
-          _id: result.user.uid,
-          _type: 'user',
-          userName: result.user.displayName,
-          image: result.user.photoURL,
-        }
+        // // sanity doc
+        // const doc = {
+        //   _id: result.user.uid,
+        //   _type: 'user',
+        //   userName: result.user.displayName,
+        //   image: result.user.photoURL,
+        // }
 
-        client.createIfNotExists(doc)
-        .then(()=>{
-          // second parameter is serialized data to be passed to the destination page
+        // client.createIfNotExists(doc)
+        // .then(()=>{
+        //   // second parameter is serialized data to be passed to the destination page
           navigate('/',{replace:true})
-        })
+        // })
       }).catch((error) => {
         // Handle Errors here.
         const errorCode = error.code;

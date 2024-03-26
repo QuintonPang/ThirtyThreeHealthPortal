@@ -14,9 +14,9 @@ const Pins = ({ user }) => {
       const data = snapshot.val();
       // console.log(Object.keys(snapshot.val())[0])
       if (snapshot.exists()) {
+        setAppointments([]);
         Object.values(data).map((appointment, i) => {
           appointment.uid = Object.keys(snapshot.val())[i];
-          setAppointments([]);
           setAppointments((appointments) => [...appointments, appointment]);
         });
         console.log(appointments);
